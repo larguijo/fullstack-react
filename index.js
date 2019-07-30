@@ -9,5 +9,7 @@ app.get("/", (req, res) => {
   res.send({ hi: "there" });
 });
 
+// For dynamic port binding or 5000 by default.
+const PORT = process.env.PORT || 5000;
 // Instructs NODE to listen for incomming traffic on port 5000.
-app.listen(5000);
+app.listen(PORT);
