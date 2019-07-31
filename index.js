@@ -5,6 +5,8 @@ require("./services/passport");
 const app = express();
 require("./routes/authRoutes")(app);
 
+app.use(express.static("public"));
+
 // For dynamic port binding or 5000 by default.
 const PORT = process.env.PORT || 5000;
 // Instructs NODE to listen for incomming traffic on port 5000.
