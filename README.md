@@ -20,3 +20,10 @@
 <li><b>Back-end URL: </b>https://fullstack-luis.herokuapp.com/</li>
 <li><b>Source code: </b>https://github.com/larguijo/fullstack-react</li>
 </ul>
+
+<h2>Oath</h2>
+<p>We install at least to libraries to handle authentication:</p>
+<ul>
+<li>Base passport library</li>
+<li>One passport strategy per authentication method (Google, Facebook, etc.). http://www.passportjs.org/packages/</li>
+</ul>
