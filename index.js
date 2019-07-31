@@ -6,7 +6,7 @@ const app = express();
 // req => Javascript object that represent the request.
 // res => Data to be sent back to the requester.
 app.get("/", (req, res) => {
-  res.send({ hi: "there" });
+  res.send({ hi: "there", bye: "buddy" });
 });
 
 // For dynamic port binding or 5000 by default.

@@ -14,3 +14,9 @@
 <li>Create .gitignore file</li>
 <li>Download Heroku CLI</li>
 </ol>
+
+<h2>Deployment info</h2>
+<ul>
+<li><b>Back-end URL: </b>https://fullstack-luis.herokuapp.com/</li>
+<li><b>Source code: </b>https://github.com/larguijo/fullstack-react</li>
+</ul>
