@@ -27,3 +27,6 @@
 <li>Base passport library</li>
 <li>One passport strategy per authentication method (Google, Facebook, etc.). http://www.passportjs.org/packages/</li>
 </ul>
+
+<h2>Mongo Instance on Atlas</h2>
+<p>To see Mongo's Cloud Instance, go to https://cloud.mongodb.com/v2#/clusters</p>
