@@ -8,6 +8,11 @@ module.exports = app => {
     passport.authenticate("google", { scope: ["profile", "email"] })
   );
 
+  app.get('/api/logout', (req, res) => {
+    // Passport appends logout method to the request object.
+    req.logout();
+    res.send(req.user);
+  });
   // User is added automatically by passport
   // through the use of serialize and deserialize
   // user.
