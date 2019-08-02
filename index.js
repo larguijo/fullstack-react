@@ -1,6 +1,9 @@
 //Common-JS modules vs ES2015 modules
 const express = require("express");
 const mongoose = require("mongoose");
+const cookieSession = require("cookie-session");
+const passport = require("passport");
+
 const keys = require("./config/keys");
 //Loading User model.
 require("./models/User");
@@ -10,6 +13,17 @@ require("./services/passport");
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const app = express();
+
+// Configuration to use cookies, setting one month duration.
+// and a key to encript it.
+app.use(cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey]
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 //Routes will be appended to app object.
 require("./routes/authRoutes")(app);
 

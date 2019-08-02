@@ -17,6 +17,7 @@
 
 <h2>Deployment info</h2>
 <ul>
+<li><b>App config:</b>https://dashboard.heroku.com/apps/fullstack-luis</li>
 <li><b>Back-end URL: </b>https://fullstack-luis.herokuapp.com/</li>
 <li><b>Source code: </b>https://github.com/larguijo/fullstack-react</li>
 </ul>
@@ -30,3 +31,10 @@
 
 <h2>Mongo Instance on Atlas</h2>
 <p>To see Mongo's Cloud Instance, go to https://cloud.mongodb.com/v2#/clusters</p>
+
+<h2>Login Flow<h2>
+<ul>
+<li>server/auth/google</li>
+<li>server/api/current_user</li>
+<li></li>
+</ul>
