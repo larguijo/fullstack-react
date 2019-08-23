@@ -12,7 +12,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-  User.findById(id).then((user) => {
+  User.findById(id).then(user => {
     done(null, user);
   });
 });
@@ -26,18 +26,16 @@ passport.use(
       callbackURL: "/auth/google/callback",
       proxy: true
     },
-    (accessToken, refreshToken, profile, done) => {
-      // We'll search for user ID in mongo DB, if the 
+    async (accessToken, refreshToken, profile, done) => {
+      // We'll search for user ID in mongo DB, if the
       // user exists, the user is returned, if not it's created.
-      User.findOne({ googleId: profile.id }).then(existingUser => {
-        if (existingUser) {
-          //done(error, userRecord)
-          done(null, existingUser);
-        } else {
-          new User({ googleId: profile.id }).save()
-            .then(user => done(null, user));
-        }
-      });
+      const existingUser = await User.findOne({ googleId: profile.id });
+      if (existingUser) {
+        //done(error, userRecord)
+        return done(null, existingUser);
+      }
+      const user = await new User({ googleId: profile.id }).save();
+      done(null, user);
     }
   )
 );
