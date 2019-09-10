@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
+const bodyParser = require("body-parser");
 
 const keys = require("./config/keys");
 //Loading User model.
@@ -13,6 +14,9 @@ require("./services/passport");
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const app = express();
+
+// Parses de request body and put it in req.body.
+app.use(bodyParser.json());
 
 // Configuration to use cookies, setting one month duration.
 // and a key to encript it.
@@ -26,6 +30,7 @@ app.use(passport.session());
 
 //Routes will be appended to app object.
 require("./routes/authRoutes")(app);
+require("./routes/billingRoutes")(app);
 
 //Allows to load static files, required for domain validation in google OAuth.
 app.use(express.static("public"));
