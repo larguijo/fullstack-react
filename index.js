@@ -33,7 +33,7 @@ require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
 
 //Allows to load static files, required for domain validation in google OAuth.
-app.use(express.static("public"));
+//app.use(express.static("public"));
 
 // Since create-react-app doesn't exist in production.
 // We have to instruct Node to let react router handle route it doesn't know
