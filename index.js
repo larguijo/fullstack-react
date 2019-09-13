@@ -39,7 +39,7 @@ require("./routes/billingRoutes")(app);
 // We have to instruct Node to let react router handle route it doesn't know
 if (process.env.NODE_ENV === 'production') {
     //Express to serve up production assets.
-    app.use(express.static('client/bluid'));
+    app.use(express.static('client/build'));
     //Express will serve up the index.html file if it doesn't recognize the route
     const path = require('path');
     app.get('*', (req, res) => {
