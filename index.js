@@ -35,6 +35,18 @@ require("./routes/billingRoutes")(app);
 //Allows to load static files, required for domain validation in google OAuth.
 app.use(express.static("public"));
 
+// Since create-react-app doesn't exist in production.
+// We have to instruct Node to let react router handle route it doesn't know
+if (process.env.NODE_ENV === 'production') {
+    //Express to serve up production assets.
+    app.use(express.static('client/bluid'));
+    //Express will serve up the index.html file if it doesn't recognize the route
+    const path = require('path');
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+}
+
 // For dynamic port binding or 5000 by default.
 const PORT = process.env.PORT || 5000;
 // Instructs NODE to listen for incomming traffic on port 5000.
