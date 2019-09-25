@@ -36,5 +36,11 @@
 <ul>
 <li>server/auth/google</li>
 <li>server/api/current_user</li>
-<li></li>
+<li>server/api/logout</li>
 </ul>
+
+<h2>Stripe Payments</h2>
+<p>To see Stripe API keys, go to https://dashboard.stripe.com/test/apikeys</p>
+<p>For the backend,  we use <a href="https://www.npmjs.com/package/stripe">Stripe</a>; for the
+frontend, we use <a href="https://www.npmjs.com/package/react-stripe-checkout">React Stripe</a>
+</p>

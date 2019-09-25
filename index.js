@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const keys = require("./config/keys");
 //Loading User model.
 require("./models/User");
+require("./models/Survey");
 //Execute passport configuration on load, no return value is expected.
 require("./services/passport");
 
@@ -31,6 +32,7 @@ app.use(passport.session());
 //Routes will be appended to app object.
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 //Allows to load static files, required for domain validation in google OAuth.
 //app.use(express.static("public"));
