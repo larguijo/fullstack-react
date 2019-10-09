@@ -6,6 +6,8 @@
 <li>Route file will be called "index.js"</li>
 </ul>
 
+<p>Deployed application can be found <a href="https://fullstack-luis.herokuapp.com/">here</a></p>
+
 <h2>Deploy on Heroku</h2>
 <ol>
 <li>Heroku will expose a particular port we need to use, we need make to sure we're listening on that port. That is defined in the index file.</li>
