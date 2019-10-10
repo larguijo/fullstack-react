@@ -46,3 +46,9 @@
 <p>For the backend,  we use <a href="https://www.npmjs.com/package/stripe">Stripe</a>; for the
 frontend, we use <a href="https://www.npmjs.com/package/react-stripe-checkout">React Stripe</a>
 </p>
+
+<h2>E-mail delivery</h2>
+<p>We're using <a href="sendgrid.com">sendgrid.com</a> to send the surveys to the defined recipients.
+That allow us to send mails for free and configure Web Hooks to receive the feedback for user clicks.
+</p>
+<p>Webhook configuration is under Settings > Event Notifications inside Sendgrid configuration panel</p>
