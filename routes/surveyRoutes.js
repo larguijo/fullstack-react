@@ -1,4 +1,4 @@
-const Path = require('path-parser');
+const { Path } = require('path-parser');
 const { URL } = require('url');
 const _ = require('lodash');
 const mongoose = require('mongoose');
