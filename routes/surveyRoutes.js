@@ -10,7 +10,7 @@ const Mailer = require('../services/Mailer');
 const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 
 module.exports = (app) => {
-  app.get('/api/surveys/thanks', (req, res) => {
+  app.get('/api/surveys/:surveyId/:choice', (req, res) => {
     res.send('Thanks for voting');
   });
 
@@ -63,7 +63,8 @@ module.exports = (app) => {
           },
           {
             $inc: { [choice]: 1 },
-            $set: { 'recipients.$.responded': true }
+            $set: { 'recipients.$.responded': true },
+            lastResponded: new Date()
           }).exec();
       })
       .value();
