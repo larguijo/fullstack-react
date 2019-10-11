@@ -71,4 +71,17 @@ module.exports = (app) => {
 
     res.send({});
   });
+
+  app.get('/api/surveys', requireLogin, async (req, res) => {
+    try {
+      const surveys = await Survey
+        .find({ _user: req.user.id })
+        .select({ recipients: false });
+      res.send(surveys);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+
+
+  });
 };
